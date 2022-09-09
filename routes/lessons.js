@@ -1,38 +1,27 @@
 const express = require("express")
-const Lesson = require('../models/lessonModel')
+const {
+  getLessons,
+  getLesson,
+  createLesson,
+  deleteLesson,
+  updateLesson,
+} = require('../controllers/lessonController')
 
 const router = express.Router()
 
 // Get all lessons
-router.get('/', (req, res) => {
-  res.json({mssg: 'GET lessons'})
-})
+router.get('/', getLessons)
 
 // GET a single lesson
-router.get('/:id', (req, res) => {
-  res.json({mssg: 'GET single lesson'})
-})
+router.get('/:id', getLesson)
 
 // POST a lesson
-router.post('/', async (req, res) => {
-  const { title, description } = req.body
-
-  try {
-    const lesson = await Lesson.create({ title, description })
-    res.status(200).json(lesson)
-  } catch (error) {
-    res.status(400).json({error: error.message})
-  }
-})
+router.post('/', createLesson)
 
 // DELETE a lesson
-router.delete('/:id', (req, res) => {
-  res.json({mssg: 'DELETE a lesson'})
-})
+router.delete('/:id', deleteLesson)
 
 // UPDATE a lesson
-router.patch('/:id', (req, res) => {
-  res.json({mssg: 'UPDATE a lesson'})
-})
+router.patch('/:id', updateLesson)
 
 module.exports = router
