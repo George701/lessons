@@ -1,13 +1,27 @@
 const express = require("express")
+require('dotenv').config()
 
 const app = express()
+const mongoose = require('mongoose')
+const lessonRouter = require('./routes/lessons')
 
-app.get("/", (req, res) => {
-  res.send("Welcome to the homepage")
+// middleware
+app.use(express.json())
+app.use((req, res, next) => {
+  console.log(req.path, req.method)
+  next()
 })
 
-app.get("/admin", (req, res) => {
-  res.send("This is the top secret admin page")
-})
+app.use('/api/lessons', lessonRouter)
 
-app.listen(3000)
+// connect to db
+mongoose.connect(process.env.MONG_URI)
+  .then(() => {
+    // listen for requests
+    app.listen(process.env.PORT, () => {
+      console.log(`connected to db & listening on port ${process.env.PORT}`)
+    })
+  })
+  .catch(error => {
+    console.log(error)
+  })
