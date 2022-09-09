@@ -1,4 +1,5 @@
 const express = require("express")
+const Lesson = require('../models/lessonModel')
 
 const router = express.Router()
 
@@ -13,8 +14,15 @@ router.get('/:id', (req, res) => {
 })
 
 // POST a lesson
-router.post('/', (req, res) => {
-  res.json({mssg: 'POST new lesson'})
+router.post('/', async (req, res) => {
+  const { title, description } = req.body
+
+  try {
+    const lesson = await Lesson.create({ title, description })
+    res.status(200).json(lesson)
+  } catch (error) {
+    res.status(400).json({error: error.message})
+  }
 })
 
 // DELETE a lesson
