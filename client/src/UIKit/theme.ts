@@ -5,6 +5,7 @@ export default {
     lightblue: '#607EAA',
     gray: '#EAE3D2',
     lightgrey: '#F9F5EB',
-    black: '#333333'
+    black: '#333333',
+    white: '#FFFFFF',
   }
 };

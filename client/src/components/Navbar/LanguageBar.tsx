@@ -12,6 +12,7 @@ const Wrapper = styled.div`
   display: flex;
   width: 10rem;
   justify-content: space-around;
+  border-radius: 0 4px 4px 0;
 `
 
 const LangOption = styled.div<{isChosen: boolean}>`
@@ -20,7 +21,7 @@ const LangOption = styled.div<{isChosen: boolean}>`
   align-items: center;
   cursor: ${props => props.isChosen ? 'not-allowed' : 'pointer'};
   margin: 0 .3rem;
-  opacity: ${props => props.isChosen ? .7 : 1};
+  opacity: ${props => props.isChosen ? .4 : 1};
   transition: all 0.3s ease-out;
 `
 const OpenBar = styled.div`
@@ -28,6 +29,7 @@ const OpenBar = styled.div`
   width: 5rem;
   background-color: ${props => props.theme.palette.gray};
   display: flex;
+  border-radius: 0 4px 4px 0;
 `
 
 const LanguageOption = styled.div`
