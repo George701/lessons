@@ -1,4 +1,5 @@
 {
   "lessonsLabel": "Уроки",
-  "timetableLabel": "Расписание"
+  "timetableLabel": "Расписание",
+  "loadingLessonsErrorLabel": "Не удалось загрузит уроки"
 }

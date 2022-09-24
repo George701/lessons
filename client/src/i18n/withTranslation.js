@@ -20,6 +20,7 @@ const withTranslation = (Component) => {
       case languageOptions.rus:
         return language_rus;
       default:
+        console.log(languageOptions)
         return language_eng;
     }
   }

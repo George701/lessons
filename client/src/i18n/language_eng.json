@@ -1,4 +1,5 @@
 {
   "lessonsLabel": "Lessons",
-  "timetableLabel": "Timetable"
+  "timetableLabel": "Timetable",
+  "loadingLessonsErrorLabel": "Couldn't load lessons"
 }

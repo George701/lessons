@@ -6,7 +6,7 @@ const initialState = {
 };
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export default (state = initialState, action) => {
+export default (state = initialState, action: { type: string, payload: any }) => {
     const { type, payload } = action;
     switch (type) {
         case SET_LANGUAGE:

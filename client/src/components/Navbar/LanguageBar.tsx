@@ -12,22 +12,25 @@ const Wrapper = styled.div`
   display: flex;
   width: 10rem;
   justify-content: space-around;
+  border-radius: 0 4px 4px 0;
 `
 
 const LangOption = styled.div<{isChosen: boolean}>`
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: ${props => props.isChosen ? 'not-allowed' : 'pointer'};
+  cursor: ${props => !props.isChosen && 'pointer'};
   margin: 0 .3rem;
-  opacity: ${props => props.isChosen ? .7 : 1};
+  opacity: ${props => props.isChosen ? .4 : 1};
   transition: all 0.3s ease-out;
+  pointer-events: ${props => props.isChosen && 'none'};
 `
 const OpenBar = styled.div`
   padding: .5rem 1rem;
   width: 5rem;
   background-color: ${props => props.theme.palette.gray};
   display: flex;
+  border-radius: 0 4px 4px 0;
 `
 
 const LanguageOption = styled.div`
