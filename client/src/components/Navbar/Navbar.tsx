@@ -18,7 +18,7 @@ const StyledLink = styled(Link)`
   align-items: center;
   color: ${props => props.theme.palette.black};
   text-decoration: none;
-  font-size: 24px;
+  font-size: ${props => props.theme.fontSize.header};
   font-weight: 700;
   padding: 2rem 1rem;
   transition: all 0.3s ease-out;

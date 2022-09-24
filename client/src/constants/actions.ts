@@ -1,5 +1,5 @@
-export const SUCCESS = "SUCCESS";
-export const FAILED = "FAILED";
+export const SUCCESS = "_SUCCESS";
+export const FAILED = "_FAILED";
 
 export const SET_LANGUAGE = "SET_LANGUAGE";
 

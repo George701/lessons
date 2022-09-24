@@ -7,5 +7,11 @@ export default {
     lightgrey: '#F9F5EB',
     black: '#333333',
     white: '#FFFFFF',
+    error: '#b71c1c'
+  },
+  fontSize: {
+    basic: '16px',
+    error: '20px',
+    header: '24px'
   }
 };

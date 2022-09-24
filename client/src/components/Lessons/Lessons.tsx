@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 import { getLessons } from '../../actions/lesson'
+import withTranslation from '../../i18n/withTranslation'
 import { ILessonReducer } from '../../models/lessons'
 import Loader from '../../UIKit/components/Loader'
 
@@ -14,18 +15,43 @@ const LessonWrapper = styled.div`
   min-height: 10rem;
 `
 
-const Lessons = (props: {getLessons: () => void, lessons: ILessonReducer}) => {
-  const { getLessons, lessons } = props
+const LessonError = styled.div`
+  width: 100%;
+  min-height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: ${props => props.theme.fontSize.error};
+  color: ${props => props.theme.palette.error};
+`
+
+const Lessons = (props: {getLessons: () => void, lessons: ILessonReducer, t: (str: string) => string}) => {
+  const { getLessons, lessons, t } = props
+  const { loading, loaded, error, lessonsCollection } = lessons
 
   useEffect(() => {
     getLessons()
   }, [])
 
-  console.log(lessons)
-
   return (
     <LessonWrapper>
-      <Loader />
+      {
+        loading && <Loader />
+      }
+      {
+        loaded && error && (
+          <LessonError>
+            {t(error)}
+          </LessonError>
+        )
+      }
+      {
+        loaded && !!lessonsCollection.length && (
+          <div>
+            Aloha
+          </div>
+        )
+      }
     </LessonWrapper>
   )
 }
@@ -38,4 +64,4 @@ const mapDispatchToProps = {
   getLessons,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Lessons)
+export default withTranslation(connect(mapStateToProps, mapDispatchToProps)(Lessons))
