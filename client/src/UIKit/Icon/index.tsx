@@ -3,8 +3,9 @@ import Arrow from './Arrow'
 import FlagEng from './FlagENG'
 import FlagRus from './FlagRUS'
 import Logo from './Logo'
+import Loader from './Loader'
 
-type iconType = 'logo' | 'rus' | 'eng' | 'arrow'
+type iconType = 'logo' | 'rus' | 'eng' | 'arrow' | 'loader'
 
 const Icon = (props: {
   type: iconType,
@@ -15,6 +16,7 @@ const Icon = (props: {
 }): JSX.Element => {
   const { type, height, width, style, fill } = props
   switch(type) {
+
     case 'logo':
      return (
       <Logo
@@ -23,19 +25,28 @@ const Icon = (props: {
         height={height}
         width={width}
       />
-     );
+     )
+
+    case 'loader':
+     return (
+      <Loader />
+     )
+
     case 'rus':
      return (
       <FlagRus />
      )
+
     case 'eng':
      return (
       <FlagEng />
      )
+
     case 'arrow':
      return (
       <Arrow fill={fill} />
      )
+
     default:
       return (
         <div>404 No LOGO found</div>
