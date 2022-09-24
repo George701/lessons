@@ -19,10 +19,11 @@ const LangOption = styled.div<{isChosen: boolean}>`
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: ${props => props.isChosen ? 'not-allowed' : 'pointer'};
+  cursor: ${props => !props.isChosen && 'pointer'};
   margin: 0 .3rem;
   opacity: ${props => props.isChosen ? .4 : 1};
   transition: all 0.3s ease-out;
+  pointer-events: ${props => props.isChosen && 'none'};
 `
 const OpenBar = styled.div`
   padding: .5rem 1rem;
