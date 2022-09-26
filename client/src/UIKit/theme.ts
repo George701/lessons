@@ -12,6 +12,7 @@ export default {
   fontSize: {
     basic: '16px',
     error: '20px',
-    header: '24px'
+    header: '28px',
+    subHeader: '24px',
   }
 };

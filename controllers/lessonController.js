@@ -27,10 +27,10 @@ const getLesson = async (req, res) => {
 
 // create new lesson
 const createLesson = async (req, res) => {
-  const { title, description } = req.body
+  const { title, description, cover } = req.body
   // add doc to db
   try {
-    const lesson = await Lesson.create({ title, description })
+    const lesson = await Lesson.create({ title, description, cover })
     res.status(200).json(lesson)
   } catch (error) {
     res.status(400).json({error: error.message})

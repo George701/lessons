@@ -4,8 +4,11 @@ import FlagEng from './FlagENG'
 import FlagRus from './FlagRUS'
 import Logo from './Logo'
 import Loader from './Loader'
+import Lesson from './Lesson'
+import Table from './Table'
+import Column from './Column'
 
-type iconType = 'logo' | 'rus' | 'eng' | 'arrow' | 'loader'
+type iconType = 'logo' | 'rus' | 'eng' | 'arrow' | 'loader' | 'lesson' | 'table' | 'column'
 
 const Icon = (props: {
   type: iconType,
@@ -16,6 +19,26 @@ const Icon = (props: {
 }): JSX.Element => {
   const { type, height, width, style, fill } = props
   switch(type) {
+
+    case 'table':
+     return (
+      <Table
+        fill={fill}
+        style={style}
+        height={height}
+        width={width}
+      />
+     )
+
+    case 'column':
+     return (
+      <Column
+        fill={fill}
+        style={style}
+        height={height}
+        width={width}
+      />
+     )
 
     case 'logo':
      return (
@@ -45,6 +68,11 @@ const Icon = (props: {
     case 'arrow':
      return (
       <Arrow fill={fill} />
+     )
+
+    case 'lesson':
+     return (
+      <Lesson />
      )
 
     default:
