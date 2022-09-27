@@ -7,8 +7,11 @@ import Loader from './Loader'
 import Lesson from './Lesson'
 import Table from './Table'
 import Column from './Column'
+import Pen from './Pen'
+import TrashCan from './TrashCan'
+import Cross from './Cross'
 
-type iconType = 'logo' | 'rus' | 'eng' | 'arrow' | 'loader' | 'lesson' | 'table' | 'column'
+type iconType = 'logo' | 'rus' | 'eng' | 'arrow' | 'loader' | 'lesson' | 'table' | 'column' | 'pen' | 'trashCan' | 'cross'
 
 const Icon = (props: {
   type: iconType,
@@ -53,6 +56,30 @@ const Icon = (props: {
     case 'loader':
      return (
       <Loader />
+     )
+
+    case 'pen':
+     return (
+      <Pen
+        height={height}
+        width={width}
+      />
+     )
+
+    case 'cross':
+     return (
+      <Cross
+        height={height}
+        width={width}
+      />
+     )
+
+    case 'trashCan':
+     return (
+      <TrashCan
+        height={height}
+        width={width}
+      />
      )
 
     case 'rus':

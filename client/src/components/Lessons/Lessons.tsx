@@ -17,7 +17,7 @@ const LessonWrapper = styled.div`
   box-shadow: 0 4px 8px 0 ${(props: any) => props.theme.palette.gray}, 0 6px 20px 0 ${(props: any) => props.theme.palette.gray};
   min-height: 10rem;
   padding: 0 2rem 1rem 2rem;
-  max-height: 600px;
+  max-height: 632px;
   overflow: auto;
 `
 
@@ -94,7 +94,7 @@ const Lessons = (props: {getLessons: () => void, lessons: ILessonReducer, t: (st
   const { getLessons, lessons, t } = props
   const { loading, loaded, error, lessonsCollection } = lessons
 
-  const [orientation, setOrientation] = useState(Orientation.LIST)
+  const [orientation, setOrientation] = useState(Orientation.TABLE)
 
   useEffect(() => {
     getLessons()

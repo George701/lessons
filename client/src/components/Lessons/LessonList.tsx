@@ -40,7 +40,7 @@ const TitleLink = styled(Link)`
   transition: all 0.3s ease-out;
   text-decoration: none;
   display: block;
-  
+  width: 100%;
 
   :hover {
     color: ${props => props.theme.palette.gray};
