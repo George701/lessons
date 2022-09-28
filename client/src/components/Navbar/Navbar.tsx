@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import withTranslation from '../../i18n/withTranslation'
+import { useTranslation } from 'react-i18next'
 import Icon from '../../UIKit/Icon'
 import theme from '../../UIKit/theme'
 import LanguageBar from './LanguageBar'
@@ -43,8 +43,10 @@ const logoStyle = {
   transform: 'translate(-50%, -50%)',
 }
 
-const Navbar = (props: { t: (label: string) => string }) => {
-  const { t } = props;
+const Navbar = (props: {}) => {
+  
+  const { t } = useTranslation()
+
   return (
     <div>
       <NavbarContainer>
@@ -71,4 +73,4 @@ const Navbar = (props: { t: (label: string) => string }) => {
   )
 }
 
-export default withTranslation(Navbar)
+export default Navbar

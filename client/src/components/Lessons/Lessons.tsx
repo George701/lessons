@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 import { getLessons } from '../../actions/lesson'
-import withTranslation from '../../i18n/withTranslation'
 import { ILessonReducer } from '../../models/lessons'
 import Loader from '../../UIKit/components/Loader'
 import Icon from '../../UIKit/Icon'
 import LessonGrid from './LessonGrid'
 import LessonList from './LessonList'
+import { useTranslation } from 'react-i18next'
 
 const LessonWrapper = styled.div`
   margin: 2rem 10rem;
@@ -90,9 +90,11 @@ enum Orientation {
   TABLE = 'TABLE',
 }
 
-const Lessons = (props: {getLessons: () => void, lessons: ILessonReducer, t: (str: string) => string}) => {
-  const { getLessons, lessons, t } = props
+const Lessons = (props: {getLessons: () => void, lessons: ILessonReducer }) => {
+  const { getLessons, lessons } = props
   const { loading, loaded, error, lessonsCollection } = lessons
+
+  const { t } = useTranslation()
 
   const [orientation, setOrientation] = useState(Orientation.TABLE)
 
@@ -186,4 +188,4 @@ const mapDispatchToProps = {
   getLessons,
 };
 
-export default withTranslation(connect(mapStateToProps, mapDispatchToProps)(Lessons))
+export default connect(mapStateToProps, mapDispatchToProps)(Lessons)

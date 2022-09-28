@@ -11,7 +11,7 @@ import Pen from './Pen'
 import TrashCan from './TrashCan'
 import Cross from './Cross'
 
-type iconType = 'logo' | 'rus' | 'eng' | 'arrow' | 'loader' | 'lesson' | 'table' | 'column' | 'pen' | 'trashCan' | 'cross'
+type iconType = 'logo' | 'ru' | 'en' | 'arrow' | 'loader' | 'lesson' | 'table' | 'column' | 'pen' | 'trashCan' | 'cross'
 
 const Icon = (props: {
   type: iconType,
@@ -82,12 +82,12 @@ const Icon = (props: {
       />
      )
 
-    case 'rus':
+    case 'ru':
      return (
       <FlagRus />
      )
 
-    case 'eng':
+    case 'en':
      return (
       <FlagEng />
      )

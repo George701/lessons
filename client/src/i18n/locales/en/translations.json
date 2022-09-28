@@ -1,0 +1,6 @@
+{
+  "lessonsLabel": "Lessons",
+  "timetableLabel": "Timetable",
+  "loadingLessonsErrorLabel": "Couldn't load lessons",
+  "deleteLessonWarningLabel": "Are you sure you want to delete this lesson?"
+}

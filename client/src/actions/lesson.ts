@@ -8,6 +8,7 @@ export const getLessons = () => async (dispatch: (arg0: { type: string; payload?
   });
   try {
     const resp = await fetchLessons()
+    
     dispatch({
       type: GET_LESSONS + SUCCESS,
       payload: resp

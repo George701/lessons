@@ -5,6 +5,7 @@ import Button from '../../UIKit/Button'
 import LessonCover from '../../UIKit/components/LessonCover'
 import Modal from '../../UIKit/components/Modal'
 import Icon from '../../UIKit/Icon'
+import { useTranslation } from 'react-i18next'
 
 const Wrapper = styled.div`
   display: flex;
@@ -94,6 +95,7 @@ const  LessonGrid = (props: {cover?: string, id: string, title: string}) => {
   const {cover, id, title} = props
 
   const [showModal, setShowModal] = useState(false)
+  const { t } = useTranslation()
 
   return (
     <Wrapper>
@@ -101,7 +103,7 @@ const  LessonGrid = (props: {cover?: string, id: string, title: string}) => {
       <Modal show={showModal} onClose={() => setShowModal(false)}>
         <ModalMessage>
           <p>
-            slkdjflsdkfjlkdsjfklsdkljfjsdklfkldsjfkldsjflksd
+            {t('deleteLessonWarningLabel')}
           </p>
         </ModalMessage>
         <GroupBtn>
