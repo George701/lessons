@@ -5,8 +5,8 @@ import { getLessons } from '../../actions/lesson'
 import { ILessonReducer } from '../../models/lessons'
 import Loader from '../../UIKit/components/Loader'
 import Icon from '../../UIKit/Icon'
-import LessonGrid from './LessonGrid'
-import LessonList from './LessonList'
+import LessonGrid from './Lesson/LessonGrid'
+import LessonList from './Lesson/LessonList'
 import { useTranslation } from 'react-i18next'
 
 const LessonWrapper = styled.div`
@@ -85,7 +85,7 @@ const OrientationOption = styled.div<{ isChosen: boolean }>`
   }
 `
 
-enum Orientation {
+export enum Orientation {
   LIST = 'LIST',
   TABLE = 'TABLE',
 }

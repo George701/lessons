@@ -1,9 +1,10 @@
 import React from 'react'
 import OutlineBtn from './OutlineBtn'
+import BasicBtn from './BasicBtn'
 
-type btnType = 'outline' | 'rus'
+type btnType = 'outline' | 'basic'
 
-const Button = (props: {type: btnType, children: any, onClick: ()=> void}) => {
+const Button = (props: {type?: btnType, children: any, onClick: ()=> void}) => {
   const { type, children, onClick } = props
 
   switch(type) {
@@ -11,9 +12,13 @@ const Button = (props: {type: btnType, children: any, onClick: ()=> void}) => {
       return (
         <OutlineBtn children={children} onClick={onClick}/>
       )
+    case 'basic':
+      return (
+        <BasicBtn children={children} onClick={onClick}/>
+      )
     default:
       return (
-        <button>btn</button>
+        <BasicBtn children={children} onClick={onClick}/>
       )
   }
 }

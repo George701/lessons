@@ -2,5 +2,7 @@
   "lessonsLabel": "Lessons",
   "timetableLabel": "Timetable",
   "loadingLessonsErrorLabel": "Couldn't load lessons",
-  "deleteLessonWarningLabel": "Are you sure you want to delete this lesson?"
+  "deleteLessonWarningLabel": "Are you sure you want to delete this lesson?",
+  "cancelLabel": "Cancel",
+  "deleteLabel": "Delete"
 }

@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import {Link} from 'react-router-dom'
-import LessonCover from '../../UIKit/components/LessonCover'
+import LessonCover from '../../../UIKit/components/LessonCover'
+import ModalDelete from './ModalDelete'
+import LessonControllers from './LessonControllers'
+import { Orientation } from '../Lessons'
 
 const Wrapper = styled.div`
   height: 120px;
@@ -53,6 +56,7 @@ const Description = styled.div`
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+  margin-bottom: .5rem;
 `
 
 const coverStyle = {
@@ -63,8 +67,18 @@ const coverStyle = {
 
 const LessonList = (props: {cover?: string, id: string, title: string, description: string}) => {
   const {id, title, cover, description } = props
+
+  const [showModal, setShowModal] = useState(false)
+
   return (
     <Wrapper>
+
+      <ModalDelete
+        visible={showModal}
+        onClose={() => setShowModal(false)}
+        id={id}
+      />
+      
       <CoverWrapper to="/">
         {!!cover
         ? (
@@ -78,6 +92,10 @@ const LessonList = (props: {cover?: string, id: string, title: string, descripti
         <Description>
           {description}
         </Description>
+        <LessonControllers
+          orientation={Orientation.LIST}
+          onDelete={() => setShowModal(true)}
+        />
       </InfoWrapper>
     </Wrapper>
   )
