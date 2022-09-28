@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 import { languageOptions } from '../../constants/options'
 import { setLanguage } from '../../actions/lang'
 import Icon from '../../UIKit/Icon'
 import theme from '../../UIKit/theme'
+import { useTranslation } from "react-i18next"
 
 const Wrapper = styled.div`
   padding: .5rem 0 .5rem .5rem;
@@ -72,11 +73,17 @@ const CloseBarBtn = styled.div`
 `
 
 const LanguageBar = (props: {
-  language: { lang: 'rus' | 'eng' },
+  language: { lang: 'ru' | 'en' },
   setLanguage: (str: string) => void,
 }) => {
   const { language: { lang }, setLanguage} = props
   const [barOpen, changeBar] = useState(false)
+
+  const {i18n} = useTranslation()
+
+  useEffect(() => {
+    i18n.changeLanguage(lang)
+  }, [lang, i18n])
 
   if (!barOpen) {
     return (

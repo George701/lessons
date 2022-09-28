@@ -4,8 +4,14 @@ import FlagEng from './FlagENG'
 import FlagRus from './FlagRUS'
 import Logo from './Logo'
 import Loader from './Loader'
+import Lesson from './Lesson'
+import Table from './Table'
+import Column from './Column'
+import Pen from './Pen'
+import TrashCan from './TrashCan'
+import Cross from './Cross'
 
-type iconType = 'logo' | 'rus' | 'eng' | 'arrow' | 'loader'
+type iconType = 'logo' | 'ru' | 'en' | 'arrow' | 'loader' | 'lesson' | 'table' | 'column' | 'pen' | 'trashCan' | 'cross'
 
 const Icon = (props: {
   type: iconType,
@@ -16,6 +22,26 @@ const Icon = (props: {
 }): JSX.Element => {
   const { type, height, width, style, fill } = props
   switch(type) {
+
+    case 'table':
+     return (
+      <Table
+        fill={fill}
+        style={style}
+        height={height}
+        width={width}
+      />
+     )
+
+    case 'column':
+     return (
+      <Column
+        fill={fill}
+        style={style}
+        height={height}
+        width={width}
+      />
+     )
 
     case 'logo':
      return (
@@ -32,12 +58,36 @@ const Icon = (props: {
       <Loader />
      )
 
-    case 'rus':
+    case 'pen':
+     return (
+      <Pen
+        height={height}
+        width={width}
+      />
+     )
+
+    case 'cross':
+     return (
+      <Cross
+        height={height}
+        width={width}
+      />
+     )
+
+    case 'trashCan':
+     return (
+      <TrashCan
+        height={height}
+        width={width}
+      />
+     )
+
+    case 'ru':
      return (
       <FlagRus />
      )
 
-    case 'eng':
+    case 'en':
      return (
       <FlagEng />
      )
@@ -45,6 +95,11 @@ const Icon = (props: {
     case 'arrow':
      return (
       <Arrow fill={fill} />
+     )
+
+    case 'lesson':
+     return (
+      <Lesson />
      )
 
     default:

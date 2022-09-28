@@ -1,6 +1,6 @@
 export const languageOptions = {
-    eng: 'eng',
-    rus: 'rus',
+    en: 'en',
+    ru: 'ru',
 };
 
 export const modes = {

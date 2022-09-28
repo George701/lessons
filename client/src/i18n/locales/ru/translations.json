@@ -1,0 +1,8 @@
+{
+  "lessonsLabel": "Уроки",
+  "timetableLabel": "Расписание",
+  "loadingLessonsErrorLabel": "Не удалось загрузит уроки",
+  "deleteLessonWarningLabel": "Вы уверены, что хотите удалить этот урок?",
+  "cancelLabel": "Отменить",
+  "deleteLabel": "Delete"
+}

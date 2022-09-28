@@ -2,7 +2,7 @@ import { SET_LANGUAGE } from '../constants/actions';
 import { languageOptions } from '../constants/options';
 
 const initialState = {
-    lang: languageOptions.eng,
+    lang: languageOptions.en,
 };
 
 // eslint-disable-next-line import/no-anonymous-default-export
