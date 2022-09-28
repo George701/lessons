@@ -8,18 +8,7 @@ import Icon from '../../UIKit/Icon'
 import LessonGrid from './Lesson/LessonGrid'
 import LessonList from './Lesson/LessonList'
 import { useTranslation } from 'react-i18next'
-
-const LessonWrapper = styled.div`
-  margin: 2rem 10rem;
-  border: 1px solid ${(props: any) => props.theme.palette.gray};
-  background: ${(props: any) => props.theme.palette.white};
-  border-radius: 4px;
-  box-shadow: 0 4px 8px 0 ${(props: any) => props.theme.palette.gray}, 0 6px 20px 0 ${(props: any) => props.theme.palette.gray};
-  min-height: 10rem;
-  padding: 0 2rem 1rem 2rem;
-  max-height: 632px;
-  overflow: auto;
-`
+import { Wrapper } from '../mainStyles'
 
 const LessonError = styled.div`
   width: 100%;
@@ -103,7 +92,7 @@ const Lessons = (props: {getLessons: () => void, lessons: ILessonReducer }) => {
   }, [])
 
   return (
-    <LessonWrapper>
+    <Wrapper>
       <LessonsBar>
         Blbla
         <OrientationBar>
@@ -139,7 +128,7 @@ const Lessons = (props: {getLessons: () => void, lessons: ILessonReducer }) => {
       {
         loaded && !!lessonsCollection.length && orientation === Orientation.LIST && generateLessonList(lessonsCollection)
       }
-    </LessonWrapper>
+    </Wrapper>
   )
 }
 
