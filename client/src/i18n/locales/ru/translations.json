@@ -4,5 +4,11 @@
   "loadingLessonsErrorLabel": "Не удалось загрузит уроки",
   "deleteLessonWarningLabel": "Вы уверены, что хотите удалить этот урок?",
   "cancelLabel": "Отменить",
-  "deleteLabel": "Delete"
+  "deleteLabel": "Удалить",
+  "titleLabel": "Заголовок",
+  "descriptionLabel": "Описание",
+  "enterURLImageLabel": "Введите URL картинки",
+  "imageURLLabel": "URL картинки",
+  "createLessonLabel": "Создать урок",
+  "saveLabel": "Сохранить"
 }

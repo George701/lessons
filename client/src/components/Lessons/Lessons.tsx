@@ -9,6 +9,7 @@ import LessonGrid from './Lesson/LessonGrid'
 import LessonList from './Lesson/LessonList'
 import { useTranslation } from 'react-i18next'
 import { Wrapper } from '../mainStyles'
+import Button from '../../UIKit/Button'
 
 const LessonError = styled.div`
   width: 100%;
@@ -94,7 +95,9 @@ const Lessons = (props: {getLessons: () => void, lessons: ILessonReducer }) => {
   return (
     <Wrapper>
       <LessonsBar>
-        Blbla
+        <Button type='link' href='/lessons/manip'>
+          {t('createLessonLabel')}
+        </Button>
         <OrientationBar>
           <OrientationOptions>
             <OrientationOption

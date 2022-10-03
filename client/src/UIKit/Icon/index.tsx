@@ -10,8 +10,24 @@ import Column from './Column'
 import Pen from './Pen'
 import TrashCan from './TrashCan'
 import Cross from './Cross'
+import Photo from './Photo'
 
-type iconType = 'logo' | 'ru' | 'en' | 'arrow' | 'loader' | 'lesson' | 'table' | 'column' | 'pen' | 'trashCan' | 'cross'
+type iconType = 'logo' | 'ru' | 'en' | 'arrow' | 'loader' | 'lesson' | 'table' | 'column' | 'pen' | 'trashCan' | 'cross' | 'photo'
+
+export enum EIconType {
+  logo = 'logo',
+  ru = 'ru',
+  en = 'en',
+  arrow = 'arrow',
+  lesson = 'lesson',
+  loader = 'loader',
+  table = 'table',
+  column = 'column',
+  pen = 'pen',
+  trashCan = 'trashCan',
+  cross = 'cross',
+  photo = 'photo',
+}
 
 const Icon = (props: {
   type: iconType,
@@ -95,6 +111,15 @@ const Icon = (props: {
     case 'arrow':
      return (
       <Arrow fill={fill} />
+     )
+
+    case 'photo':
+     return (
+      <Photo
+        height={height}
+        width={width}
+        fill={fill}
+      />
      )
 
     case 'lesson':

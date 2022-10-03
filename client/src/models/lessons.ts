@@ -4,3 +4,9 @@ export interface ILessonReducer {
   loaded: boolean,
   error: null | string,
 }
+
+export interface ILessonBasicModel {
+  title: string,
+  description: string,
+  cover?: string,
+}

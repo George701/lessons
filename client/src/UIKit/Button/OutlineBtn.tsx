@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { IButton } from '.'
 
 const OutlineButton = styled.button`
   padding: .5rem 1rem;
@@ -20,7 +21,7 @@ const OutlineButton = styled.button`
 `
 
 
-const OutlineBtn = (props: { children: any, onClick: ()=> void }) => {
+const OutlineBtn = (props: IButton) => {
   const { children, onClick } = props
   return (
     <OutlineButton type='button' onClick={onClick}>{children}</OutlineButton>

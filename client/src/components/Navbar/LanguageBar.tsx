@@ -52,7 +52,7 @@ const OpenBarBtn = styled.div`
   :hover {
     svg {
       transition: all 0.3s ease-out;
-      fill: ${props => props.theme.palette.lightgrey};
+      fill: ${props => props.theme.palette.lightgray};
     }
   }
 `
@@ -67,7 +67,7 @@ const CloseBarBtn = styled.div`
   :hover {
     svg {
       transition: all 0.3s ease-out;
-      fill: ${props => props.theme.palette.lightgrey};
+      fill: ${props => props.theme.palette.lightgray};
     }
   }
 `

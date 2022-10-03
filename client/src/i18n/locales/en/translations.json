@@ -4,5 +4,11 @@
   "loadingLessonsErrorLabel": "Couldn't load lessons",
   "deleteLessonWarningLabel": "Are you sure you want to delete this lesson?",
   "cancelLabel": "Cancel",
-  "deleteLabel": "Delete"
+  "deleteLabel": "Delete",
+  "titleLabel": "Title",
+  "descriptionLabel": "Description",
+  "imageURLLabel": "Image URL",
+  "enterURLImageLabel": "Enter URL of an image",
+  "createLessonLabel": "Create lesson",
+  "saveLabel": "Save"
 }
