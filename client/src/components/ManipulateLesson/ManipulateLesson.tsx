@@ -5,7 +5,7 @@ import { Wrapper } from '../mainStyles'
 import Input, { EInput } from '../../UIKit/components/Input'
 import PhotoCover from '../../UIKit/components/PhotoCover'
 import Button, { EBtnType } from '../../UIKit/Button'
-import Icon from '../../UIKit/Icon'
+import Icon, { EIconType } from '../../UIKit/Icon'
 import { saveLesson } from '../../services/services'
 
 const LessonWrapper = styled(Wrapper)`
@@ -75,7 +75,7 @@ const ManipulateLesson = () => {
           : (
             <CoverWrapper>
               <Button type={EBtnType.icon} onClick={() => setCover('')}>
-                <Icon type='cross'/>
+                <Icon type={EIconType.cross}/>
               </Button>
               <LessonCover src={cover} alt='lesson-image' />
             </CoverWrapper>

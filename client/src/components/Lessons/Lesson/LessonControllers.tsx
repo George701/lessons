@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Icon from '../../../UIKit/Icon'
+import Icon, { EIconType } from '../../../UIKit/Icon'
 import { Orientation } from '../Lessons'
 
 const ControllerWrappers = styled.div<{orientation: Orientation}>`
@@ -37,14 +37,14 @@ const LessonControllers = (props: IProps) => {
     <ControllerWrappers orientation={orientation}>
         <ControllerOption>
           <Icon
-            type='pen'
+            type={EIconType.pen}
             height={20}
             width={20}
           />
         </ControllerOption>
         <ControllerOption onClick={onDelete}>
           <Icon
-            type='trashCan'
+            type={EIconType.trashCan}
             height={20}
             width={20}
           />

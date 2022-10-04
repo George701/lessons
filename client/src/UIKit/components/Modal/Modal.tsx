@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Icon from '../../Icon'
+import Icon, { EIconType } from '../../Icon'
 
 const ModalWrapper = styled.div`
   display: block;
@@ -63,7 +63,7 @@ const Modal = (props: {show: boolean, onClose: ()=>void, children: any}) => {
       <ModalContent>
         <CloseModalBar>
           <CloseButton onClick={onClose}>
-            <Icon type='cross' />
+            <Icon type={EIconType.cross} />
           </CloseButton>
         </CloseModalBar>
         {children}

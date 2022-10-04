@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { useTranslation } from 'react-i18next'
-import Icon from '../../UIKit/Icon'
+import Icon, { EIconType } from '../../UIKit/Icon'
 import theme from '../../UIKit/theme'
 import LanguageBar from './LanguageBar'
 
@@ -53,7 +53,7 @@ const Navbar = (props: {}) => {
           <Link to="/">
             <LogoEmblem>
               <Icon
-                type='logo'
+                type={EIconType.logo}
                 fill={theme.palette.lightblue}
                 style={logoStyle}
                 height={70}

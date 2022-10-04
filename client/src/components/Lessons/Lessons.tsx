@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { getLessons } from '../../actions/lesson'
 import { ILessonReducer } from '../../models/lessons'
 import Loader from '../../UIKit/components/Loader'
-import Icon from '../../UIKit/Icon'
+import Icon, { EIconType } from '../../UIKit/Icon'
 import LessonGrid from './Lesson/LessonGrid'
 import LessonList from './Lesson/LessonList'
 import { useTranslation } from 'react-i18next'
@@ -104,13 +104,13 @@ const Lessons = (props: {getLessons: () => void, lessons: ILessonReducer }) => {
               isChosen={orientation === Orientation.TABLE}
               onClick={() => setOrientation(Orientation.TABLE)}
             >
-              <Icon type="table" height={24} width={24} />
+              <Icon type={EIconType.table} height={24} width={24} />
             </OrientationOption>
             <OrientationOption
               isChosen={orientation === Orientation.LIST}
               onClick={() => setOrientation(Orientation.LIST)}
             >
-              <Icon type="column" height={24} width={24}/>
+              <Icon type={EIconType.column} height={24} width={24}/>
             </OrientationOption>
           </OrientationOptions>
         </OrientationBar>

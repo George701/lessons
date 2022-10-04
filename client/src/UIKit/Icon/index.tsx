@@ -12,25 +12,24 @@ import TrashCan from './TrashCan'
 import Cross from './Cross'
 import Photo from './Photo'
 
-type iconType = 'logo' | 'ru' | 'en' | 'arrow' | 'loader' | 'lesson' | 'table' | 'column' | 'pen' | 'trashCan' | 'cross' | 'photo'
 
 export enum EIconType {
-  logo = 'logo',
-  ru = 'ru',
-  en = 'en',
   arrow = 'arrow',
+  cross = 'cross',
+  column = 'column',
   lesson = 'lesson',
   loader = 'loader',
-  table = 'table',
-  column = 'column',
+  logo = 'logo',
   pen = 'pen',
-  trashCan = 'trashCan',
-  cross = 'cross',
   photo = 'photo',
+  table = 'table',
+  trashCan = 'trashCan',
+  ru = 'ru',
+  en = 'en',
 }
 
 const Icon = (props: {
-  type: iconType,
+  type: EIconType,
   height?: number,
   width?: number,
   style?: any,
@@ -39,7 +38,7 @@ const Icon = (props: {
   const { type, height, width, style, fill } = props
   switch(type) {
 
-    case 'table':
+    case EIconType.table:
      return (
       <Table
         fill={fill}
@@ -49,7 +48,7 @@ const Icon = (props: {
       />
      )
 
-    case 'column':
+    case EIconType.column:
      return (
       <Column
         fill={fill}
@@ -59,7 +58,7 @@ const Icon = (props: {
       />
      )
 
-    case 'logo':
+    case EIconType.logo:
      return (
       <Logo
         fill={fill}
@@ -69,12 +68,12 @@ const Icon = (props: {
       />
      )
 
-    case 'loader':
+    case EIconType.loader:
      return (
       <Loader />
      )
 
-    case 'pen':
+    case EIconType.pen:
      return (
       <Pen
         height={height}
@@ -82,7 +81,7 @@ const Icon = (props: {
       />
      )
 
-    case 'cross':
+    case EIconType.cross:
      return (
       <Cross
         height={height}
@@ -90,7 +89,7 @@ const Icon = (props: {
       />
      )
 
-    case 'trashCan':
+    case EIconType.trashCan:
      return (
       <TrashCan
         height={height}
@@ -98,22 +97,22 @@ const Icon = (props: {
       />
      )
 
-    case 'ru':
+    case EIconType.ru:
      return (
       <FlagRus />
      )
 
-    case 'en':
+    case EIconType.en:
      return (
       <FlagEng />
      )
 
-    case 'arrow':
+    case EIconType.arrow:
      return (
       <Arrow fill={fill} />
      )
 
-    case 'photo':
+    case EIconType.photo:
      return (
       <Photo
         height={height}
@@ -122,7 +121,7 @@ const Icon = (props: {
       />
      )
 
-    case 'lesson':
+    case EIconType.lesson:
      return (
       <Lesson />
      )

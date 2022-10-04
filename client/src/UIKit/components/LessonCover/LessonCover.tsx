@@ -1,5 +1,5 @@
 import React from 'react'
-import Icon from '../../Icon'
+import Icon, { EIconType } from '../../Icon'
 import styled from 'styled-components'
 
 const CoverWrapper = styled.div`
@@ -21,7 +21,7 @@ const LessonCover = (props: {style?: any}) => {
   const { style } = props
   return (
     <CoverWrapper style={style}>
-      <Icon type='lesson' />
+      <Icon type={EIconType.lesson} />
     </CoverWrapper>
   )
 }
