@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import styled from 'styled-components'
 import { useTranslation } from 'react-i18next'
 import Modal from '../../../UIKit/components/Modal'
-import Button from '../../../UIKit/Button'
+import Button, { EBtnType } from '../../../UIKit/Button'
 import { deleteLesson } from '../../../services/services'
 import { getLessons } from '../../../actions/lesson'
 import showToast from '../../../UIKit/components/Toast/showToast'
@@ -63,7 +63,7 @@ const ModalDelete = (props: IProps) => {
       </ModalMessage>
       <GroupBtn>
         <Button onClick={removeLesson}>{t('deleteLabel')}</Button>
-        <Button type='outline' onClick={onClose}>{t('cancelLabel')}</Button>
+        <Button type={EBtnType.outline} onClick={onClose}>{t('cancelLabel')}</Button>
       </GroupBtn>
     </Modal>
   )

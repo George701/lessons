@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { Wrapper } from '../mainStyles'
 import Input, { EInput } from '../../UIKit/components/Input'
 import PhotoCover from '../../UIKit/components/PhotoCover'
-import Button from '../../UIKit/Button'
+import Button, { EBtnType } from '../../UIKit/Button'
 import Icon from '../../UIKit/Icon'
 import { saveLesson } from '../../services/services'
 
@@ -74,7 +74,7 @@ const ManipulateLesson = () => {
           )
           : (
             <CoverWrapper>
-              <Button type='icon' onClick={() => setCover('')}>
+              <Button type={EBtnType.icon} onClick={() => setCover('')}>
                 <Icon type='cross'/>
               </Button>
               <LessonCover src={cover} alt='lesson-image' />
@@ -83,7 +83,7 @@ const ManipulateLesson = () => {
         }
       </ImageWrapper>
 
-      <Button type='basic' onClick={() => saveLesson({title, description, cover})}>
+      <Button type={EBtnType.basic} onClick={() => saveLesson({title, description, cover})}>
         {t('saveLabel')}
       </Button>
     </LessonWrapper>

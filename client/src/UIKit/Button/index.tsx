@@ -4,7 +4,12 @@ import BasicBtn from './BasicBtn'
 import LinkBtn from './LinkBtn'
 import ImageBtn from './ImageBtn'
 
-type btnType = 'outline' | 'basic' | 'link' | 'icon'
+export enum EBtnType {
+  outline = 'outline',
+  basic = 'basic',
+  link = 'link',
+  icon = 'icon',
+}
 
 export interface IButton {
   children: any,
@@ -12,7 +17,7 @@ export interface IButton {
 }
 
 interface IMainButton extends IButton {
-  type?: btnType,
+  type?: EBtnType,
   href?: string,
 }
 
@@ -20,20 +25,20 @@ const Button = (props: IMainButton) => {
   const { type, children, onClick, href } = props
 
   switch(type) {
-    case 'outline':
+    case EBtnType.outline:
       return (
         <OutlineBtn children={children} onClick={onClick}/>
       )
 
-    case 'icon':
+    case EBtnType.icon:
       return (
         <ImageBtn children={children} onClick={onClick}/>
       )
-    case 'basic':
+    case EBtnType.basic:
       return (
         <BasicBtn children={children} onClick={onClick}/>
       )
-    case 'link':
+    case EBtnType.link:
       return (
         <LinkBtn children={children} href={href}/>
       )
