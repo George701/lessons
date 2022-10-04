@@ -93,6 +93,7 @@ const LessonList = (props: {cover?: string, id: string, title: string, descripti
           {description}
         </Description>
         <LessonControllers
+          link={`/lessons/manip/${id}`}
           orientation={Orientation.LIST}
           onDelete={() => setShowModal(true)}
         />

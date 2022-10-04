@@ -81,6 +81,7 @@ const  LessonGrid = (props: IProps) => {
       </CoverWrapper>
       <TitleLink to="/">{title}</TitleLink>
       <LessonControllers
+        link={`/lessons/manip/${id}`}
         orientation={Orientation.TABLE}
         onDelete={() => setShowModal(true)}
       />

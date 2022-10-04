@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 import Icon, { EIconType } from '../../../UIKit/Icon'
 import { Orientation } from '../Lessons'
 
@@ -26,22 +27,39 @@ const ControllerOption = styled.div`
   }
 `
 
+const ControllerOptionLink = styled(Link)`
+  padding: 0 .2rem;
+  cursor: pointer;
+
+  svg {
+    transition: all 0.3s ease-out;
+    fill: ${props => props.theme.palette.blue};
+  }
+
+  :hover {
+    svg {
+      fill: ${props => props.theme.palette.lightblue};
+    }
+  }
+`
+
 interface IProps {
+  link: string;
   orientation: Orientation;
   onDelete: ()=>void;
 }
 
 const LessonControllers = (props: IProps) => {
-  const { onDelete, orientation } = props
+  const { onDelete, orientation, link } = props
   return (
     <ControllerWrappers orientation={orientation}>
-        <ControllerOption>
+        <ControllerOptionLink to={link}>
           <Icon
             type={EIconType.pen}
             height={20}
             width={20}
           />
-        </ControllerOption>
+        </ControllerOptionLink>
         <ControllerOption onClick={onDelete}>
           <Icon
             type={EIconType.trashCan}
