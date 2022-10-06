@@ -10,5 +10,9 @@
   "enterURLImageLabel": "Введите URL картинки",
   "imageURLLabel": "URL картинки",
   "createLessonLabel": "Создать урок",
+  "lessonLoadErrorLabel": "Не удалось загрузить детали урока",
+  "lessonSavedLabel": "Урок был успешно сохранен",
+  "lessonDeleteLabel": "Урок был успешно удален",
+  "lessonSavedErrorLabel": "Не удалось сохранить урок",
   "saveLabel": "Сохранить"
 }

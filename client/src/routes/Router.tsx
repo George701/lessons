@@ -1,5 +1,7 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
+import definedUrls from '../constants/definedUrls'
+import { LessonId } from '../constants/identifications'
 
 //pages & components
 import Home from '../pages/Home'
@@ -11,23 +13,23 @@ const Router = () => {
   return (
     <Routes>
       <Route
-        path="/"
+        path={definedUrls.HomeURL}
         element={<Home />}
       />
       <Route
-        path="/lessons"
+        path={definedUrls.LessonsURL}
         element={<Lessons />}
       />
       <Route
-        path="/lessons/manip"
+        path={definedUrls.EditLEssonURL}
         element={<ManipLesson />}
       />
       <Route
-        path="/lessons/manip/:id"
+        path={`${definedUrls.EditLEssonURL}?${LessonId}=:id`}
         element={<ManipLesson />}
       />
       <Route
-        path="/timetable"
+        path={definedUrls.TimetableURL}
         element={<Timetable />}
       />
     </Routes>

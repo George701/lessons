@@ -10,5 +10,9 @@
   "imageURLLabel": "Image URL",
   "enterURLImageLabel": "Enter URL of an image",
   "createLessonLabel": "Create lesson",
+  "lessonLoadErrorLabel": "Couldn't load lesson details",
+  "lessonSavedLabel": "Lesson was saved successfully",
+  "lessonDeleteLabel": "Lesson was deleted successfully",
+  "lessonSavedErrorLabel": "Couldn't save lesson",
   "saveLabel": "Save"
 }

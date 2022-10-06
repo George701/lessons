@@ -5,6 +5,8 @@ import LessonCover from '../../../UIKit/components/LessonCover'
 import ModalDelete from './ModalDelete'
 import LessonControllers from './LessonControllers'
 import { Orientation } from '../Lessons'
+import definedUrls from '../../../constants/definedUrls'
+import { LessonId } from '../../../constants/identifications'
 
 const Wrapper = styled.div`
   display: flex;
@@ -81,7 +83,7 @@ const  LessonGrid = (props: IProps) => {
       </CoverWrapper>
       <TitleLink to="/">{title}</TitleLink>
       <LessonControllers
-        link={`/lessons/manip/${id}`}
+        link={`${definedUrls.EditLEssonURL}?${LessonId}=${id}`}
         orientation={Orientation.TABLE}
         onDelete={() => setShowModal(true)}
       />

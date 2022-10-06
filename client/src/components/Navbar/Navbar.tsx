@@ -30,8 +30,8 @@ const LogoEmblem = styled.div`
   border-radius: 50%;
   height: 100px;
   width: 100px;
-  background: ${props => props.theme.palette.gray};
-  border: 4px solid ${props => props.theme.palette.black};
+  background: ${props => props.theme.palette.btn_linear};
+  border: 4px solid ${props => props.theme.palette.deep_purple};
   position: relative;
   margin-right: 3rem;
 `
@@ -54,7 +54,7 @@ const Navbar = (props: {}) => {
             <LogoEmblem>
               <Icon
                 type={EIconType.logo}
-                fill={theme.palette.lightblue}
+                fill={theme.palette.white}
                 style={logoStyle}
                 height={70}
                 width={70}

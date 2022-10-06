@@ -17,12 +17,12 @@ const ControllerOption = styled.div`
 
   svg {
     transition: all 0.3s ease-out;
-    fill: ${props => props.theme.palette.blue};
+    fill: ${props => props.theme.palette.deep_purple};
   }
 
   :hover {
     svg {
-      fill: ${props => props.theme.palette.lightblue};
+      fill: ${props => props.theme.palette.purple};
     }
   }
 `
@@ -33,12 +33,12 @@ const ControllerOptionLink = styled(Link)`
 
   svg {
     transition: all 0.3s ease-out;
-    fill: ${props => props.theme.palette.blue};
+    fill: ${props => props.theme.palette.deep_purple};
   }
 
   :hover {
     svg {
-      fill: ${props => props.theme.palette.lightblue};
+      fill: ${props => props.theme.palette.purple};
     }
   }
 `

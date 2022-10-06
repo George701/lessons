@@ -47,6 +47,7 @@ const ModalDelete = (props: IProps) => {
       if (resp === 200) {
         onClose()
         getLessons()
+        showToast(t('lessonDeleteLabel'))
       }
     } catch (error) {
       console.error(error);

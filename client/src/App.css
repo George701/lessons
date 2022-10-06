@@ -20,11 +20,11 @@ html, body, #root {
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #607EAA;
+  background: linear-gradient(86.24deg, #3949ab 3.76%, #673ab7 98.88%);
   border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #1C3879;
+  background: linear-gradient(86.24deg, #673ab7 3.76%, #8e24aa 98.88%);
 }

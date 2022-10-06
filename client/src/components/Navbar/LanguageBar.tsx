@@ -92,7 +92,7 @@ const LanguageBar = (props: {
           <Icon type={lang} />
         </LanguageOption>
         <OpenBarBtn onClick={() => changeBar(true)}>
-          <Icon type={EIconType.arrow} fill={theme.palette.black}/>
+          <Icon type={EIconType.arrow} fill={theme.palette.deep_purple}/>
         </OpenBarBtn>
       </OpenBar>
     )
@@ -110,7 +110,7 @@ const LanguageBar = (props: {
           })
         }
         <CloseBarBtn onClick={() => changeBar(false)}>
-          <Icon type={EIconType.arrow} fill={theme.palette.black}/>
+          <Icon type={EIconType.arrow} fill={theme.palette.deep_purple}/>
         </CloseBarBtn>
       </Wrapper>
     )

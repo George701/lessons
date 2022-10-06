@@ -64,13 +64,13 @@ const OrientationOption = styled.div<{ isChosen: boolean }>`
   pointer-events: ${props => props.isChosen && 'none'};
 
   svg {
-    fill: ${props => props.theme.palette.blue};
+    fill: ${props => props.theme.palette.deep_purple};
     transition: all 0.3s ease-out;
   }
 
   :hover {
     svg {
-      fill: ${props => props.theme.palette.lightblue};
+      fill: ${props => props.theme.palette.purple};
     }
   }
 `

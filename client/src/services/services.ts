@@ -15,3 +15,13 @@ export const saveLesson = async (model: ILessonBasicModel) => {
   const resp = await axios.post('/api/lessons/', model)
   return resp.status
 }
+
+export const editLesson = async (id: string, model: ILessonBasicModel) => {
+  const resp = await axios.patch(`/api/lessons/${id}`, model)
+  return resp.status
+}
+
+export const fetchLesson = async (id: string) => {
+  const resp = await axios.get(`/api/lessons/${id}`)
+  return resp.data
+}

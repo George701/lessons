@@ -3,9 +3,10 @@ import styled from 'styled-components'
 import { IButton } from '.'
 
 const BasicButton = styled.button`
-  padding: .5rem 1rem;
+  padding: .7rem 1.2rem;
   background-color: ${props => props.theme.palette.blue};
-  border: 3px solid ${props => props.theme.palette.blue};
+  background: ${props => props.theme.palette.btn_linear};
+  border: none;
   border-radius: 4px;
   cursor: pointer;
   color: ${props => props.theme.palette.white};
@@ -14,8 +15,7 @@ const BasicButton = styled.button`
   transition: all 0.3s ease-out;
 
   :hover {
-    border: 3px solid ${props => props.theme.palette.lightblue};
-    background-color: ${props => props.theme.palette.lightblue};
+    background: ${props => props.theme.palette.btn_linear_hover};
   }
 `
 
