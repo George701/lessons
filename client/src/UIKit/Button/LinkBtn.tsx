@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import { IButton } from '.'
+import { Link } from 'react-router-dom'
 
-const BasicButton = styled.button`
+const LinkButton = styled(Link)`
   padding: .7rem 1.2rem;
   background-color: ${props => props.theme.palette.blue};
   background: ${props => props.theme.palette.btn_linear};
@@ -13,18 +13,23 @@ const BasicButton = styled.button`
   font-size: ${props => props.theme.fontSize.basic};
   font-weight: 700;
   transition: all 0.3s ease-out;
+  text-decoration: none;
 
   :hover {
     background: ${props => props.theme.palette.btn_linear_hover};
   }
 `
 
+interface ILinkButton {
+  children: any;
+  href?: string;
+}
 
-const BasicBtn = (props: IButton) => {
-  const { children, onClick } = props
+const LinkBtn = (props: ILinkButton) => {
+  const { children, href } = props
   return (
-    <BasicButton type='button' onClick={onClick}>{children}</BasicButton>
+    <LinkButton to={!!href?.length ? href : '/'} >{children}</LinkButton>
   )
 }
 
-export default BasicBtn
+export default LinkBtn

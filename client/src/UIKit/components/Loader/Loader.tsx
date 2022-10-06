@@ -1,5 +1,5 @@
 import React from 'react'
-import Icon from '../../Icon'
+import Icon, { EIconType } from '../../Icon'
 import styled, { keyframes } from 'styled-components'
 
 const rotate = keyframes`
@@ -29,7 +29,7 @@ const LoaderWrapper = styled.div`
 const Loader = () => {
   return (
     <LoaderWrapper>
-      <Icon type='loader' />
+      <Icon type={EIconType.loader} />
     </LoaderWrapper>
   )
 }

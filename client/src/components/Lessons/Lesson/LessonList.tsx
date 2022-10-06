@@ -5,6 +5,8 @@ import LessonCover from '../../../UIKit/components/LessonCover'
 import ModalDelete from './ModalDelete'
 import LessonControllers from './LessonControllers'
 import { Orientation } from '../Lessons'
+import definedUrls from '../../../constants/definedUrls'
+import { LessonId } from '../../../constants/identifications'
 
 const Wrapper = styled.div`
   height: 120px;
@@ -93,6 +95,7 @@ const LessonList = (props: {cover?: string, id: string, title: string, descripti
           {description}
         </Description>
         <LessonControllers
+          link={`${definedUrls.EditLEssonURL}?${LessonId}=${id}`}
           orientation={Orientation.LIST}
           onDelete={() => setShowModal(true)}
         />

@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import styled from 'styled-components'
 import { languageOptions } from '../../constants/options'
 import { setLanguage } from '../../actions/lang'
-import Icon from '../../UIKit/Icon'
+import Icon, { EIconType } from '../../UIKit/Icon'
 import theme from '../../UIKit/theme'
 import { useTranslation } from "react-i18next"
 
@@ -52,7 +52,7 @@ const OpenBarBtn = styled.div`
   :hover {
     svg {
       transition: all 0.3s ease-out;
-      fill: ${props => props.theme.palette.lightgrey};
+      fill: ${props => props.theme.palette.lightgray};
     }
   }
 `
@@ -67,13 +67,13 @@ const CloseBarBtn = styled.div`
   :hover {
     svg {
       transition: all 0.3s ease-out;
-      fill: ${props => props.theme.palette.lightgrey};
+      fill: ${props => props.theme.palette.lightgray};
     }
   }
 `
 
 const LanguageBar = (props: {
-  language: { lang: 'ru' | 'en' },
+  language: { lang: EIconType.ru | EIconType.en },
   setLanguage: (str: string) => void,
 }) => {
   const { language: { lang }, setLanguage} = props
@@ -92,7 +92,7 @@ const LanguageBar = (props: {
           <Icon type={lang} />
         </LanguageOption>
         <OpenBarBtn onClick={() => changeBar(true)}>
-          <Icon type='arrow' fill={theme.palette.black}/>
+          <Icon type={EIconType.arrow} fill={theme.palette.deep_purple}/>
         </OpenBarBtn>
       </OpenBar>
     )
@@ -101,7 +101,7 @@ const LanguageBar = (props: {
     return (
       <Wrapper>
         {
-          Object.values(languageOptions).map((option: 'rus' | 'eng'| any) => {
+          Object.values(languageOptions).map((option: EIconType.ru | EIconType.en | any) => {
             return (
               <LangOption key={option} isChosen={option === lang} onClick={() => setLanguage(option)}>
                 <Icon type={option} />
@@ -110,7 +110,7 @@ const LanguageBar = (props: {
           })
         }
         <CloseBarBtn onClick={() => changeBar(false)}>
-          <Icon type='arrow' fill={theme.palette.black}/>
+          <Icon type={EIconType.arrow} fill={theme.palette.deep_purple}/>
         </CloseBarBtn>
       </Wrapper>
     )
