@@ -7,6 +7,7 @@ import LessonControllers from './LessonControllers'
 import { Orientation } from '../Lessons'
 import definedUrls from '../../../constants/definedUrls'
 import { LessonId } from '../../../constants/identifications'
+import Tooltip from '../../../UIKit/components/Tooltip'
 
 const Wrapper = styled.div`
   height: 120px;
@@ -90,7 +91,9 @@ const LessonList = (props: {cover?: string, id: string, title: string, descripti
         )}
       </CoverWrapper>
       <InfoWrapper>
-        <TitleLink to="/">{title}</TitleLink>
+        <TitleLink to="/">
+          <Tooltip text={title} />
+        </TitleLink>
         <Description>
           {description}
         </Description>

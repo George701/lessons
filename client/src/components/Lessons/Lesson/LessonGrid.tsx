@@ -7,6 +7,7 @@ import LessonControllers from './LessonControllers'
 import { Orientation } from '../Lessons'
 import definedUrls from '../../../constants/definedUrls'
 import { LessonId } from '../../../constants/identifications'
+import Tooltip from '../../../UIKit/components/Tooltip'
 
 const Wrapper = styled.div`
   display: flex;
@@ -26,6 +27,11 @@ const TitleLink = styled(Link)`
   text-decoration: none;
   width: 200px;
   display: block;
+  /* overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical; */
   
 
   :hover {
@@ -81,7 +87,9 @@ const  LessonGrid = (props: IProps) => {
           <LessonCover style={coverStyle} />
         )}
       </CoverWrapper>
-      <TitleLink to="/">{title}</TitleLink>
+      <TitleLink to="/">
+        <Tooltip text={title} />
+        </TitleLink>
       <LessonControllers
         link={`${definedUrls.EditLEssonURL}?${LessonId}=${id}`}
         orientation={Orientation.TABLE}
